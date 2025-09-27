@@ -1,8 +1,8 @@
-# object-get-set
+# object-dot-ts
 
 A lightweight TypeScript utility library for safely getting and setting nested object properties with full type safety.
 
-[![npm version](https://badge.fury.io/js/object-get-set.svg)](https://www.npmjs.com/package/object-get-set)
+[![npm version](https://badge.fury.io/js/object-dot-ts.svg)](https://www.npmjs.com/package/object-dot-ts)
 
 ## Features
 
@@ -16,15 +16,15 @@ A lightweight TypeScript utility library for safely getting and setting nested o
 ## Installation
 
 ```bash
-npm install object-get-set
+npm install object-dot-ts
 ```
 
 ```bash
-yarn add object-get-set
+yarn add object-dot-ts
 ```
 
 ```bash
-pnpm add object-get-set
+pnpm add object-dot-ts
 ```
 
 ## Usage
@@ -32,7 +32,7 @@ pnpm add object-get-set
 ### Import
 
 ```typescript
-import { get, set } from 'object-get-set';
+import { get, set } from 'object-dot-ts';
 ```
 
 ### get - Safely get nested properties
@@ -165,7 +165,7 @@ MIT © [Dhruv Jain](https://maddhruv.dev)
 
 ## Contributing
 
-We welcome contributions to `object-get-set`! Here's how you can help:
+We welcome contributions to `object-dot-ts`! Here's how you can help:
 
 ### Getting Started
 
@@ -173,8 +173,8 @@ We welcome contributions to `object-get-set`! Here's how you can help:
 2. **Clone your fork** locally:
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/object-get-set.git
-   cd object-get-set
+   git clone https://github.com/YOUR_USERNAME/object-dot-ts.git
+   cd object-dot-ts
    ```
 
 3. **Install dependencies**:
@@ -221,6 +221,6 @@ We welcome contributions to `object-get-set`! Here's how you can help:
 
 ## Repository
 
-- **GitHub**: [https://github.com/maddhruv/object-get-set](https://github.com/maddhruv/object-get-set)
-- **Issues**: [https://github.com/maddhruv/object-get-set/issues](https://github.com/maddhruv/object-get-set/issues)
-- **NPM**: [https://www.npmjs.com/package/object-get-set](https://www.npmjs.com/package/object-get-set)
+- **GitHub**: [https://github.com/maddhruv/object-dot-ts](https://github.com/maddhruv/object-dot-ts)
+- **Issues**: [https://github.com/maddhruv/object-dot-ts/issues](https://github.com/maddhruv/object-dot-ts/issues)
+- **NPM**: [https://www.npmjs.com/package/object-dot-ts](https://www.npmjs.com/package/object-dot-ts)
