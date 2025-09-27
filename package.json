@@ -1,6 +1,6 @@
 {
 	"name": "object-dot-ts",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A utility library for safely getting and setting nested object properties",
 	"main": "dist/index.mjs",
 	"types": "dist/index.d.mts",
