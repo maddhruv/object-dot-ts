@@ -1,5 +1,5 @@
 import { assertType, describe, expect, it } from "vitest";
-import { set } from "../set";
+import { set } from "..";
 
 describe("set", () => {
 	const testObject = {

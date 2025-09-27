@@ -1,6 +1,6 @@
 import { assertType, describe, expect, it } from "vitest";
 
-import { get } from "../get";
+import { get } from "..";
 
 describe("get", () => {
 	const testObject = {
