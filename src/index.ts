@@ -48,9 +48,8 @@ function get<T, P extends Paths<T>, D = undefined>(
 	path: P,
 	defaultValue?: D,
 ): Get<T, P> | D {
-	if (!path || (Array.isArray(path) && path.length === 0) || path === "") {
+	if (!path || (Array.isArray(path) && path.length === 0) || path === "")
 		return defaultValue as D;
-	}
 
 	// Convert path to array of keys
 	const keys = path
@@ -62,16 +61,12 @@ function get<T, P extends Paths<T>, D = undefined>(
 	let current: unknown = obj;
 
 	for (const key of keys) {
-		if (current === null || current === undefined) {
-			return defaultValue as D;
-		}
+		if (current === null || current === undefined) return defaultValue as D;
 
 		// Type-safe property access
-		if (typeof current === "object" && key in current) {
+		if (typeof current === "object" && key in current)
 			current = current[key as keyof typeof current];
-		} else {
-			return defaultValue as D;
-		}
+		else return defaultValue as D;
 	}
 
 	// Return the result
@@ -124,9 +119,8 @@ function set<T, P extends Paths<T>, V extends Get<T, P>>(
 	const chunks = Array.isArray(path) ? path : path.split(".");
 
 	// Handle empty path - return a new object with the value
-	if (chunks.length === 0 || (chunks.length === 1 && chunks[0] === "")) {
+	if (chunks.length === 0 || (chunks.length === 1 && chunks[0] === ""))
 		return value as unknown as T;
-	}
 
 	const tempObj: ToRecord<T> = structuredClone(obj);
 	chunks.reduce<Record<string, unknown>>((acc, chunk, index) => {

@@ -37,6 +37,9 @@
 		"url": "https://github.com/maddhruv/object-dot-ts/issues"
 	},
 	"homepage": "https://github.com/maddhruv/object-dot-ts#readme",
+	"dependencies": {
+		"type-fest": "^5.0.1"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "2.2.4",
 		"@types/node": "^24.5.2",
@@ -64,9 +67,6 @@
 		"dts": true,
 		"format": "esm",
 		"bundle": false
-	},
-	"dependencies": {
-		"type-fest": "^5.0.1"
 	},
 	"release-it": {
 		"$schema": "https://unpkg.com/release-it/schema/release-it.json",

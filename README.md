@@ -1,8 +1,8 @@
 # object-dot-ts
 
-A lightweight TypeScript utility library for safely getting and setting nested object properties with full type safety.
+A sub-500B TypeScript utility library for safely getting and setting nested object properties with full type safety.
 
-[![npm version](https://badge.fury.io/js/object-dot-ts.svg)](https://www.npmjs.com/package/object-dot-ts)
+[![npm version](https://badge.fury.io/js/object-dot-ts.svg)](https://www.npmjs.com/package/object-dot-ts) ![NPM Downloads](https://img.shields.io/npm/dw/object-dot-ts) ![NPM License](https://img.shields.io/npm/l/object-dot-ts) ![Bundle Size](https://badgen.net/bundlephobia/minzip/object-dot-ts?color=green) ![Type Safe](https://badgen.net/badge/icon/typescript?icon=typescript&label)
 
 ## Features
 
