@@ -262,5 +262,41 @@ describe("get", () => {
 			assertType<number | typeof testObject>(result2);
 			assertType<boolean | typeof testObject>(result3);
 		});
+
+		it("with a type object", () => {
+			type TestObjectType = {
+				user: {
+					name: string;
+					age: number;
+				};
+			};
+			const testObjectType: TestObjectType = {
+				user: {
+					name: "John",
+					age: 30,
+				},
+			};
+			const result = get(testObjectType, "user.name");
+			expect(result).toBe("John");
+			assertType<string>(result);
+		});
+
+		it("with an interface object", () => {
+			interface TestInterfaceObject {
+				user: {
+					name: string;
+					age: number;
+				};
+			}
+			const testInterfaceObject: TestInterfaceObject = {
+				user: {
+					name: "John",
+					age: 30,
+				},
+			};
+			const result = get(testInterfaceObject, "user.name");
+			expect(result).toBe("John");
+			assertType<string>(result);
+		});
 	});
 });

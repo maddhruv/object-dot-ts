@@ -1,4 +1,4 @@
-import type { Get, Paths } from "./types";
+import type { Get, Paths, ToRecord } from "./types";
 
 /**
  * Safely gets a nested property value from an object using a dot-notation path.
@@ -37,20 +37,17 @@ import type { Get, Paths } from "./types";
  * const missing = get(user, 'profile.missing.deep.property'); // undefined
  * ```
  */
-function get<T extends Record<string, unknown>, P extends Paths<T>>(
+function get<T, P extends Paths<T>>(obj: T, path: P): Get<T, P>;
+function get<T, P extends Paths<T>, D = undefined>(
+	obj: ToRecord<T>,
+	path: P,
+	defaultValue: D,
+): Get<T, P> | D;
+function get<T, P extends Paths<T>, D = undefined>(
 	obj: T,
 	path: P,
-): Get<T, P>;
-function get<
-	T extends Record<string, unknown>,
-	P extends Paths<T>,
-	D = undefined,
->(obj: T, path: P, defaultValue: D): Get<T, P> | D;
-function get<
-	T extends Record<string, unknown>,
-	P extends Paths<T>,
-	D = undefined,
->(obj: T, path: P, defaultValue?: D): Get<T, P> | D {
+	defaultValue?: D,
+): Get<T, P> | D {
 	if (!path || (Array.isArray(path) && path.length === 0) || path === "") {
 		return defaultValue as D;
 	}
@@ -119,11 +116,11 @@ function get<
  * console.log(user); // { profile: { name: 'John' } }
  * ```
  */
-function set<
-	T extends Record<string, unknown>,
-	P extends Paths<T>,
-	V extends Get<T, P>,
->(obj: T, path: P | string[], value: V) {
+function set<T, P extends Paths<T>, V extends Get<T, P>>(
+	obj: ToRecord<T>,
+	path: P | string[],
+	value: V,
+) {
 	const chunks = Array.isArray(path) ? path : path.split(".");
 
 	// Handle empty path - return a new object with the value
@@ -131,7 +128,7 @@ function set<
 		return value as unknown as T;
 	}
 
-	const tempObj: T = structuredClone(obj);
+	const tempObj: ToRecord<T> = structuredClone(obj);
 	chunks.reduce<Record<string, unknown>>((acc, chunk, index) => {
 		acc[chunk] ??= {};
 

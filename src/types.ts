@@ -1,13 +1,14 @@
-import type { Paths as IPaths, Get as IGet } from "type-fest";
+import type { Get as IGet, Paths as IPaths } from "type-fest";
 
-export type Paths<T extends Record<string, unknown>> = IPaths<
-	T,
+export type ToRecord<T> = T extends Record<string, unknown>
+	? T
+	: Record<string, unknown> & T;
+
+export type Paths<T> = IPaths<
+	ToRecord<T>,
 	{
 		maxRecursionDepth: 10;
 	}
 >;
 
-export type Get<T extends Record<string, unknown>, P extends Paths<T>> = IGet<
-	T,
-	P
->;
+export type Get<T, P extends Paths<T>> = IGet<ToRecord<T>, P>;
